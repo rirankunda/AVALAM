@@ -15,10 +15,10 @@ Dans ce dossier, vous pouvez trouvez:
 
 Pour lancer notre IA sur le server (https://github.com/Seb1903/AvalamAI/tree/master/AIGameRunner-master), vous devez:
 
-lancer inscription.py dans l'invité de commande("python inscription.py") en vous assurant que le port 8082 est 
+1)lancer inscription.py dans l'invité de commande("python inscription.py") en vous assurant que le port 8082 est 
 libre. 
 
-Une fois l'inscription faite, c'est au tour d'avalamV1.py d'être lancé dans l'invité de commande("python avalamV1.py")
+2)Une fois l'inscription faite, c'est au tour d'avalamV1.py d'être lancé dans l'invité de commande("python avalamV1.py")
 
 
 La stratégie de notre IA est simple, elle ne joue pas en envisageant les coups à l'avance. Dès qu'elle a l'occasion de faire une tour de 5 avec les pions de l'adversaire, elle le fait sinon elle fait une simple tour.
