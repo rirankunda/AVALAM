@@ -23,8 +23,8 @@ class Server:
         movefinal=self.AI()
         
         return {"move": {"from": movefinal[0] ,"to" : movefinal[1]},"message": "alors?" }
-    
-
+    #Fonction qui détermine tous les moves possibles en fonction de l'état du jeu.
+    #Retourne une liste contenant des listes de couple de coordonées (from,to)    
     def possible_moves(self):
         moves = []
         for i in range(0,9):
@@ -35,39 +35,40 @@ class Server:
                             if not(k==0 and l==0)and i+k>=0 and i+k<=8 and j+l>=0 and j+l<=8 and(len(self.board[i][j])+len(self.board[i+k][j+l])<=5)and(self.board[i+k][j+l]):
                                 moves.append([[i,j],[i+k,j+l]])
         return moves
-    
- 
+    #Fonction qui permet de determiner quels sont les pions de l'ia.
+    #Renvoie 0 ou 1         
     def wich_player(self):
         if self.players[0] == self.you:
             return 0 
         else:
             return 1 
-    
-
+    #Fonction qui vérifie plateau de jeu afin de déterminer si il y a possibilité de créer une tour de 5
+    #Retourne un move possible ou False    
     def tour5(self):
         for move in self.possible_moves():
             if len(self.board[move[0][0]][move[0][1]])+len(self.board[move[0][0]][move[0][1]])==5 and self.board[move[0][0]][move[0][1]][-1]==self.wich_player():
                 if self.board[move[1][0]][move[1][1]][-1]!=self.wich_player():
                     return move
         return False
- 
-
-    def prendre_une_tour(self):
+    #Fonction qui vérifie le plateau de jeu afin de déterminer si il y a possibilité de prendre une tour
+    #Retourne un move possible ou False 
+    def take_a_tour(self):
         for move in self.possible_moves():
             if len(self.board[move[0][0]][move[0][1]])+len(self.board[move[0][0]][move[0][1]])<5 and self.board[move[0][0]][move[0][1]][-1]==self.wich_player():
                 if self.board[move[1][0]][move[1][1]][-1]!=self.wich_player():
                     return move
         return False
-
+    #Algorythme qui va renvoyer le meilleur move possible en fonction de l'état du jeu 
     def AI(self):
         if self.tour5()==False:
-            if self.prendre_une_tour()==False:
+            if self.take_a_tour()==False:
                 return choice(self.possible_moves())
             else:
-                return self.prendre_une_tour()
+                return self.take_a_tour()
         else:
             return self.tour5()
     @cherrypy.expose
+    #Route ping
     def ping(self):
         return "pong"
 
