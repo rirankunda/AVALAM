@@ -15,9 +15,9 @@ else:
     port=8082
 
 msg = {
-	"matricules": ["11111", "22222"],
+	"matricules": ["195344", "195311"],
 	"port": port,
-	"name": "Terminator"
+	"name": "Grey Matter"
 }
 
 hote = "localhost"
