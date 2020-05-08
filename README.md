@@ -19,7 +19,7 @@ Pour lancer notre IA sur le server (https://github.com/Seb1903/AvalamAI/tree/mas
 
 2) lancer inscription.py dans l'invité de commande("python inscription.py [Le port ex:1234]")
 
-3) Une fois l'inscription faite, c'est au tour d'avalamV1.py d'être lancé dans l'invité de commande("python avalam_server.py [le même port que pour inscription]")
+3) Une fois l'inscription faite, c'est au tour d'avalam_server.py d'être lancé dans l'invité de commande("python avalam_server.py [le même port que pour inscription]")
 
 
 La stratégie de notre IA est simple, elle ne joue pas en envisageant les coups à l'avance. Dès qu'elle a l'occasion de faire une tour de 5 avec les pions de l'adversaire, elle le fait sinon elle fait une simple tour.
