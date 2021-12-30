@@ -13,7 +13,7 @@ Dans ce dossier, vous pouvez trouvez:
   avalamV1.py: fonction qui contient notre IA
 
 
-Pour lancer notre IA sur le server (https://github.com/Seb1903/AvalamAI/tree/master/AIGameRunner-master), vous devez:
+Pour lancer notre IA sur le server, vous devez:
 
 1) Vous assurez d'avoir cherrypy d'installé
 
